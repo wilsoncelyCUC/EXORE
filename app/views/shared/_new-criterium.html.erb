@@ -1,0 +1,31 @@
+<div class="post-row"  role="combobox">
+
+  <%= simple_form_for(@criterium) do |f| %>
+      <%= f.input :search_status,
+                  label: 'What is your status?',
+                  collection: Criterium::SEARCH_STATUS
+                  %>
+      <%= f.input :notice_period,
+                  label: 'Do you have a notice period?',
+                  collection: Criterium::NOTICE_PERIOD %>
+
+      <%= f.input :location,
+                  label: 'Where would you like to work?'%>
+
+
+      <%= f.input :salary_grid,
+                  label: 'Do you have a notice period?',
+                  collection: Criterium::SALARY_GRID %>
+    <%= f.input :position_id,
+                  label: 'what position are you targeting?',
+                  collection: Position.all,
+                  label_method: lambda { |position| position.position_name } %>
+
+      <div class="">
+        <%= f.submit 'Next', class:"btn-principal" %>
+        <%#= link_to "Back",  edit_account_path(account)  %>
+      </div>
+    <% end %>
+  <ul data-autocomplete-target="results"></ul>
+
+</div>

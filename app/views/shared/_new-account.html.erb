@@ -1,0 +1,16 @@
+
+<%= simple_form_for(@account) do |f| %>
+    <%= f.input :first_name, label: 'Name'%>
+    <%= f.input :last_name, label: 'Last Name' %>
+    <%= f.input :birthday ,
+                :as => :date,
+                :start_year => Date.today.year - 60,
+                :end_year => Date.today.year - 12,
+                :order => [:day, :month, :year], label: 'Birthday'%>
+    <%= f.input :phone , label: 'Phone (E.G. 3005520741)'%>
+
+    <div class="">
+      <%= f.submit 'Next', class:"btn-principal" %>
+      <%#= link_to "Back", edit_user_registration_path  %>
+    </div>
+  <% end %>
