@@ -11,7 +11,8 @@
 Devise.setup do |config|
 
   # Authentication Linkedin
-  config.omniauth :linkedin, Rails.application.credentials[:linkedin][:api_id], Rails.application.credentials[:linkedin][:api_key]
+ config.omniauth :linkedin, Rails.application.credentials.linkedin[:client_id], Rails.application.credentials.linkedin[:client_secret]#, scope: 'r_liteprofile r_emailaddress', fields: ['id', 'email-address', 'first-name', 'last-name']
+
 
 
   # The secret key used by Devise. Devise uses this key to generate
