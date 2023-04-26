@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require "strategies/linkedin"
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
@@ -11,9 +11,7 @@
 Devise.setup do |config|
 
   # Authentication Linkedin
- config.omniauth :linkedin, "77zeo2jbqzn3m9", "8pCbi15ekY2tDjxI"#, scope: 'r_liteprofile r_emailaddress', fields: ['id', 'email-address', 'first-name', 'last-name']
-
-
+  config.omniauth :linkedin, Rails.application.credentials[:linkedin][:client_id], Rails.application.credentials[:linkedin][:client_secret]
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing

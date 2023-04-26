@@ -5,7 +5,18 @@ class AccountsController < ApplicationController
   end
 
   def new
-    @account = Account.new
+    # Avoid account creation page if user uses Linkedin Auth
+    if current_user.uid.nil? #without Linkedin Auth
+      @account = Account.new
+    else #with Linkedin Auth
+      @account = Account.new(
+        first_name: current_user.first_name,
+        last_name: current_user.last_name,
+        user_id: current_user.id)
+      if @account.save!
+        redirect_to new_criterium_path
+      end
+    end
   end
 
   def create
@@ -46,5 +57,6 @@ class AccountsController < ApplicationController
   def account_params
     params.require(:account).permit(:first_name, :last_name, :birthday, :phone)
   end
+
 
 end
