@@ -11,7 +11,7 @@
 Devise.setup do |config|
 
   # Authentication Linkedin
- config.omniauth :linkedin, Rails.application.credentials.linkedin[:client_id], Rails.application.credentials.linkedin[:client_secret]#, scope: 'r_liteprofile r_emailaddress', fields: ['id', 'email-address', 'first-name', 'last-name']
+ config.omniauth :linkedin, "77zeo2jbqzn3m9", "8pCbi15ekY2tDjxI"#, scope: 'r_liteprofile r_emailaddress', fields: ['id', 'email-address', 'first-name', 'last-name']
 
 
 

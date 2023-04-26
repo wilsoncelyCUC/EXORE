@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 # linkedin authentication
-  gem "omniauth", "~> 1.9.1"
+  gem "omniauth"#, "~> 1.9.1"
   gem "omniauth-linkedin-oauth2"
 
 

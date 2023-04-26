@@ -287,7 +287,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
-  omniauth (~> 1.9.1)
+  omniauth
   omniauth-linkedin-oauth2
   pg (~> 1.1)
   puma (~> 5.0)

@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # linkedin authentication
-  devise :omniauthable, omniauth_providers: %i[linkedin]
+  devise :omniauthable, omniauth_providers: [:linkedin]
 
   def self.new_with_session(params, session)
     super.tap do |user|
