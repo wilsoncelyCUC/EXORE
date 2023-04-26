@@ -8,6 +8,7 @@
 
 puts "Cleaning database ..."
 Account.destroy_all
+Social.destroy_all
 Criterium.destroy_all
 Position.destroy_all
 User.destroy_all

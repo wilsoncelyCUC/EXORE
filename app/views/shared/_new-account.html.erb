@@ -8,6 +8,7 @@
                 :end_year => Date.today.year - 12,
                 :order => [:day, :month, :year], label: 'Birthday'%>
     <%= f.input :phone , label: 'Phone (E.G. 3005520741)'%>
+    <%= f.input :photo, as: :file %>
 
     <div class="">
       <%= f.submit 'Next', class:"btn-principal" %>

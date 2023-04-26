@@ -11,7 +11,9 @@ class AccountsController < ApplicationController
   def create
     @account = Account.new(account_params)
     @account.user = current_user
+    byebug
     if @account.save!
+
       redirect_to new_criterium_path
     else
       render :new
@@ -44,7 +46,7 @@ class AccountsController < ApplicationController
   end
 
   def account_params
-    params.require(:account).permit(:first_name, :last_name, :birthday, :phone)
+    params.require(:account).permit(:first_name, :last_name, :birthday, :phone, :photo)
   end
 
 end
