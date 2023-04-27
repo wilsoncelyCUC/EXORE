@@ -4,10 +4,5 @@
 
 import { application } from "./application"
 
-//import HelloController from "./hello_controller"
-//application.register("hello", HelloController)
-// import { Application } from "@hotwired/stimulus";
-// import { Autocomplete } from "stimulus-autocomplete";
-
-// const application = Application.start();
-// application.register("autocomplete", Autocomplete);
+import MultiStepFormController from "./multi_step_form_controller"
+application.register("multi-step-form", MultiStepFormController)
