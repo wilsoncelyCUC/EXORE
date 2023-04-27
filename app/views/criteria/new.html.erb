@@ -1,5 +1,52 @@
 <h2>Create Criteria</h2>
 <div class="container">
   <h1 class="text-center my-3"></h1>
-  <%= render "shared/new-criterium", criterium: @criterium%>
+
+<%= simple_form_for(@criterium, data: { controller: "multi-step-form" }) do |f| %>
+
+  <!-- First question: Search status -->
+  <div class="form-page" data-multi-step-form-target="formPage">
+    <%= f.label :search_status, 'What is your status?' %>
+    <%= f.hidden_field :search_status %>
+    <div class="button-group">
+      <% Criterium::SEARCH_STATUS.each do |status| %>
+        <%= link_to status, "#", class: "btn btn-option", data: { action: "click->multi-step-form#nextPage", answer_value: status, param_name: "search_status" } %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Second question: Notice period -->
+  <div class="form-page" data-multi-step-form-target="formPage">
+    <%= f.label :notice_period, 'Do you have a notice period?' %>
+    <%= f.hidden_field :notice_period %>
+    <div class="button-group">
+      <% Criterium::NOTICE_PERIOD.each do |period| %>
+        <%= link_to period, "#", class: "btn btn-option", data: { action: "click->multi-step-form#nextPage", answer_value: period, param_name: "notice_period" } %>
+      <% end %>
+    </div>
+  </div>
+
+    <!-- Third question: Location -->
+    <div class="form-page" data-multi-step-form-target="formPage">
+      <%= f.input :location, label: 'Where would you like to work?' %>
+    </div>
+
+    <!-- Fourth question: Salary grid -->
+    <div class="form-page" data-multi-step-form-target="formPage">
+      <%= f.input :salary_grid, label: 'Do you have a notice period?', collection: Criterium::SALARY_GRID %>
+    </div>
+
+    <!-- Fifth question: Position -->
+    <div class="form-page" data-multi-step-form-target="formPage">
+      <%= f.input :position_id, label: 'what position are you targeting?', collection: Position.all, label_method: lambda { |position| position.position_name } %>
+    </div>
+  <div class="navigation">
+    <%= link_to "Next", "#", class: "btn-principal", data: { multi_step_form_target: "nextButton", action: "click->multi-step-form#nextPage" } %>
+    <%= link_to "Previous", "#", class: "btn-principal", data: { multi_step_form_target: "prevButton", action: "click->multi-step-form#prevPage" } %>
+    <%= f.submit 'Submit', class: "btn-principal", data: { multi_step_form_target: "submitButton" } %>
+  </div>
+
+<% end %>
+
+
 </div>

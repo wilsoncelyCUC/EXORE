@@ -1,0 +1,43 @@
+<%= simple_form_for(@criterium, data: { controller: "multi-step-form" }) do |f| %>
+
+  <!-- First question: Search status -->
+  <div class="form-page" data-multi-step-form-target="formPage">
+    <%= f.label :search_status, 'What is your status?' %>
+    <%= f.hidden_field :search_status %>
+    <div class="button-group">
+      <% Criterium::SEARCH_STATUS.each do |status| %>
+        <%= link_to status, "#", class: "btn btn-option", data: { action: "click->multi-step-form#nextPage", "answer-value" => status, "param-name" => "search_status" } %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Second question: Notice period -->
+  <div class="form-page" data-multi-step-form-target="formPage">
+    <%= f.label :notice_period, 'Do you have a notice period?' %>
+    <%= f.hidden_field :notice_period %>
+    <div class="button-group">
+      <% Criterium::NOTICE_PERIOD.each do |period| %>
+        <%= link_to period, "#", class: "btn btn-option", data: { action: "click->multi-step-form#nextPage", "answer-value" => period, "param-name" => "notice_period" } %>
+      <% end %>
+    </div>
+  </div>
+
+ <!-- Third question: Location -->
+  <div class="form-page" data-multi-step-form-target="formPage">
+    <%= f.input :location, label: 'Where would you like to work?' %>
+  </div>
+  <!-- Fourth question: Salary grid -->
+  <div class="form-page" data-multi-step-form-target="formPage">
+    <%= f.input :salary_grid, label: 'Do you have a notice period?', collection: Criterium::SALARY_GRID %>
+  </div>
+  <!-- Fifth question: Position -->
+  <div class="form-page" data-multi-step-form-target="formPage">
+    <%= f.input :position_id, label: 'what position are you targeting?', collection: Position.all, label_method: lambda { |position| position.position_name } %>
+  </div>
+
+  <div class="navigation">
+    <%= f.submit 'Next', class: "btn-principal", id: "next-button", data: { multi_step_form_target: "nextButton", action: "click->multi-step-form#nextPage" } %>
+    <%= f.button 'Previous', type: 'button', class: "btn-principal", id: "prev-button", data: { multi_step_form_target: "prevButton", action: "click->multi-step-form#prevPage" } %>
+  </div>
+
+<% end %>
