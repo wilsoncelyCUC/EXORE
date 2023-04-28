@@ -1,0 +1,25 @@
+// card header with the brain image.
+.card-header {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: $exore_ghost_white;
+  padding: 8px 1rem;
+  border: 1px solid rgb(235,235,235);
+  border-radius: 8px;
+  margin-top: 1rem;
+
+  h2, p {
+    margin-left: 1rem;
+    line-height: 1.4;
+  }
+}
+
+.card-header-more .card-header-info {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+
+// card lister
