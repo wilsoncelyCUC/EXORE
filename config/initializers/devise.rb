@@ -1,3 +1,10 @@
+def fetch_linkedin_credentials
+  if Rails.application.credentials.dig(:linkedin)
+    [Rails.application.credentials[:linkedin][:client_id], Rails.application.credentials[:linkedin][:client_secret]]
+  else
+    [ENV['LINKEDIN_CLIENT_ID'], ENV['LINKEDIN_CLIENT_SECRET']]
+  end
+end
 # frozen_string_literal: true
 
 # Assuming you have not yet modified this file, each configuration option below
@@ -12,7 +19,10 @@ Devise.setup do |config|
   require "strategies/linkedin"
 
   # Authentication Linkedin
-  config.omniauth :linkedin, Rails.application.credentials[:linkedin][:client_id], Rails.application.credentials[:linkedin][:client_secret]
+  #config.omniauth :linkedin, Rails.application.credentials[:linkedin][:client_id], Rails.application.credentials[:linkedin][:client_secret]
+  client_id, client_secret = fetch_linkedin_credentials
+  config.omniauth :linkedin, client_id, client_secret
+
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
