@@ -1,0 +1,35 @@
+.footer_onboarding_section {
+  background-color: $exore_blue;
+  padding: $spacer/2;
+  position: sticky;
+  bottom: 0px;
+  margin: 0;
+  //height: 11vh;
+}
+
+.footer_onboarding_buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+@media (max-width: 900px) {
+
+}
+
+@media (max-width: 700px) {
+    .footer_onboarding_buttons {
+      flex-direction: column;
+
+    }
+}
+
+@media (max-width: 450px) {
+  .footer_onboarding_buttons {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+}

@@ -1,6 +1,13 @@
+//margin negative
+
+.onboaring_margin_negative {
+  margin-top: $spacer * -20;
+}
+
+
 // card header with the brain image.
 .card-header {
-  width: 70%;
+  width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: $spacer;
@@ -10,7 +17,7 @@
   border-radius: $spacer;
   margin-top: $spacer;
 
-  h2, p {
+  h2 , p {
     margin-left: $spacer;
     line-height: 1.4;
   }
@@ -19,24 +26,70 @@
 .card-header-more .card-header-info {
   flex-grow: 1;
   padding: 0 24px;
+
+  p {
+    font-weight: 100;
+
+  }
+  span {
+    color: $exore_violet;
+  }
+}
+
+@media (max-width: 900px) {
+  .card-header h2 {
+    font-size: $spacer * 3;
+  }
+  .card-header p {
+    font-size: $spacer * 2;
+  }
+}
+
+@media (max-width: 700px) {
+  .card-header h2 {
+    font-size: $spacer * 2;
+    font-weight: 600;
+
+  }
+  .card-header p {
+    font-size: $spacer * 2;
+
+  }
+}
+
+@media (max-width: 450px) {
+  .card-header {
+   // padding: $spacer*1.5 $spacer;
+  }
+  .card-header h2 {
+    font-size: $spacer * 2;
+    font-weight: 600;
+  }
+  .card-header p {
+    font-size: $spacer * 1.5;
+
+  }
 }
 
 
 // card lister
 .card-lister {
   background-color: $exore_white;
-  width: 70%;
+  width: 100%;
   align-items: center;
   margin: 0;
   padding: $spacer*3 $spacer;
   border: 1px solid rgb(235,235,235);
   border-radius: $spacer;
-  margin-top: 1rem;
+
+  h2 {
+    margin-bottom: $spacer*2;
+    color: $exore_violet;
+  }
 
   h2, p {
-   // margin: $spacer;
     padding-left: $spacer;
-    //line-height: 1.4;
+    line-height: 1.4;
   }
 
 }
@@ -57,8 +110,53 @@
     p{
       i{
         padding-right: $spacer * 2;
-
       }
     }
+  }
+}
+
+@media (max-width: 900px) {
+
+  .card-lister h2 {
+    font-size: $spacer * 3;
+  }
+  .card-lister p {
+    font-size: $spacer * 2;
+  }
+
+  .card-lister-info p {
+    font-size: $spacer * 2;
+  }
+}
+
+@media (max-width: 700px) {
+  .card-lister h2 {
+    font-size: $spacer * 2;
+    font-weight: 600;
+
+  }
+  .card-lister p {
+    font-size: $spacer * 2;
+  }
+  .card-lister-info p {
+    font-size: $spacer * 2;
+  }
+
+}
+
+@media (max-width: 450px) {
+  .card-lister {
+    width: 100%;
+  }
+  .card-lister h2 {
+    font-size: $spacer * 2;
+    font-weight: 600;
+  }
+  .card-lister p {
+    font-size: $spacer * 1.5;
+
+  }
+  .card-lister .card-lister-info p {
+    font-size: $spacer * 1.5;
   }
 }

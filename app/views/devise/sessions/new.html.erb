@@ -1,20 +1,77 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('slide6.jpeg') %>);">
+  <div class="container">
+    <h1>Welcome to EXORE.net <strong>Start-Up</strong> <strong>Marketplace</strong>!</h1>
+    <p>Join the best tech talent and exciting startups on Exore by logging in</p>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<div class="container-small">
+
+  <div class="onboaring_margin_negative">
+    <div class="card-lister">
+      <h2>Are you seeking to =></h2>
+      <div class="card-lister-info">
+        <ul>
+          <li>
+            <p><i class="fa-solid fa-thumbs-up"></i>Remote-friendly job</p>
+          </li>
+          <li>
+            <p><i class="fa-solid fa-thumbs-up"></i>Work along side people changing the world</p>
+          </li>
+          <li>
+            <p><i class="fa-solid fa-thumbs-up"></i>Become a technical co-founder</p>
+          </li>
+          <li>
+            <p><i class="fa-solid fa-thumbs-up"></i>Earn money using your connections</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="card-header">
+      <%= image_tag "brain.png", class: "avatar-medium" %>
+      <div class="card-header-info">
+        <h2>Join our exclusive network</h2>
+        <p>Unleash your potential with us - where elite senior developers connect with trailblazing startups and tech-driven companies!.</p>
+        <p><span>IT TAKES LESS THAN</span><strong> 3 MINUTES</strong></p>
+      </div>
+    </div>
+
+    <div class="card-lister">
+      <h2>How it works</h2>
+      <p>Maximize your potential in the startup ecosystem with our comprehensive onboarding program that prepares you for success and answers any question you may have.</p>
+      <div class="card-lister-info">
+        <ul>
+          <li>
+            <p><i class="fa-solid fa-chalkboard-user"></i>1. Fill out a short form to tell us about yourself.</p>
+          </li>
+          <li>
+            <p><i class="fa-solid fa-headphones-simple"></i>2. Speak with our <strong>Startup Culture Gurus</strong> in a personalized interview.</p>
+          </li>
+          <li>
+            <p><i class="fa-solid fa-fingerprint"></i>3. Receive <strong>personalized job offers</strong> via your preferred channels, such as WhatsApp or Discord</p>
+          </li>
+          <li>
+            <p><i class="fa-solid fa-diagram-project"></i>Extra. Apply for the <strong>Expert Referral Program</strong> to user your knowledge and network to earn money </p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+</div>
+
+<div class="footer_onboarding_section">
+  <div class="container-small">
+    <div class="footer_onboarding_buttons d-flex justify-content-center">
+      <%= render "devise/shared/linkedin" %>
+    </div>
+  </div>
+
+</div>
