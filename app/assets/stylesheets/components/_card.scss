@@ -3,15 +3,15 @@
   width: 70%;
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
-  background: $exore_ghost_white;
-  padding: 8px 1rem;
+  margin-bottom: $spacer;
+  background: $exore_white;
+  padding: $spacer*3 $spacer;
   border: 1px solid rgb(235,235,235);
-  border-radius: 8px;
-  margin-top: 1rem;
+  border-radius: $spacer;
+  margin-top: $spacer;
 
   h2, p {
-    margin-left: 1rem;
+    margin-left: $spacer;
     line-height: 1.4;
   }
 }
@@ -23,3 +23,42 @@
 
 
 // card lister
+.card-lister {
+  background-color: $exore_white;
+  width: 70%;
+  align-items: center;
+  margin: 0;
+  padding: $spacer*3 $spacer;
+  border: 1px solid rgb(235,235,235);
+  border-radius: $spacer;
+  margin-top: 1rem;
+
+  h2, p {
+   // margin: $spacer;
+    padding-left: $spacer;
+    //line-height: 1.4;
+  }
+
+}
+
+.card-lister-info {
+  flex-grow: 1;
+  padding-left: $spacer * 3;
+  margin-left: 0;
+  padding-top: 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    line-height: 0.4;
+
+
+    p{
+      i{
+        padding-right: $spacer * 2;
+
+      }
+    }
+  }
+}
