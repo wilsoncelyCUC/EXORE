@@ -1,52 +1,110 @@
-<h2>Create Criteria</h2>
-<div class="container">
-  <h1 class="text-center my-3"></h1>
 
-<%= simple_form_for(@criterium, data: { controller: "multi-step-form" }) do |f| %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('slide1.jpeg') %>);">
+  <div class="container">
+    <h1><strong>Only takes 3 Minutes</strong></h1>
+    <p>Start-Up Marketplace</p>
+  </div>
+</div>
 
-  <!-- First question: Search status -->
-  <div class="form-page" data-multi-step-form-target="formPage">
-    <%= f.label :search_status, 'What is your status?' %>
-    <%= f.hidden_field :search_status %>
-    <div class="button-group">
-      <% Criterium::SEARCH_STATUS.each do |status| %>
-        <%= link_to status, "#", class: "btn btn-option", data: { action: "click->multi-step-form#nextPage", answer_value: status, param_name: "search_status" } %>
-      <% end %>
-    </div>
+<div class="container-small">
+
+
+
+
   </div>
 
-  <!-- Second question: Notice period -->
-  <div class="form-page" data-multi-step-form-target="formPage">
-    <%= f.label :notice_period, 'Do you have a notice period?' %>
-    <%= f.hidden_field :notice_period %>
-    <div class="button-group">
-      <% Criterium::NOTICE_PERIOD.each do |period| %>
-        <%= link_to period, "#", class: "btn btn-option", data: { action: "click->multi-step-form#nextPage", answer_value: period, param_name: "notice_period" } %>
-      <% end %>
-    </div>
+</div>
+
+
+
+
+<div class="footer_onboarding_section">
+  <div class="container-small">
+    <%# <h1 class="text-center my-3 "></h1> %>
+    <%= simple_form_for(@criterium, data: { controller: "multi-step-form" }) do |f| %>
+
+      <!-- First question: Search status -->
+      <div class="form-page" data-multi-step-form-target="formPage">
+        <%= f.label :search_status, 'Select' %>
+        <%= f.hidden_field :search_status %>
+       <!-- Display the header card for the status question -->
+        <div class="button-group  ">
+            <div class="onboaring_margin_negative">
+              <div class="card-header">
+                <%= image_tag "brain.png", class: "avatar-medium" %>
+                <div class="card-header-info">
+                  <h2>What is your Status ?</h2>
+                  <p>Selecting your status will help us to guide you through the process more efficiently. Please choose the option that best describes your current situation.</p>
+                </div>
+              </div>
+             </div>
+          <% Criterium::SEARCH_STATUS.each do |status| %>
+          <div class="d-flex justify-content-center">
+            <div class="btn-rainbow-container">
+              <%= link_to status, "#", class: "btn-rainbow-link ", data: { action: "click->multi-step-form#nextPage", answer_value: status, param_name: "search_status" } %>
+            </div>
+          </div>
+
+          <% end %>
+        </div>
+      </div>
+
+      <!-- Second question: Notice period -->
+      <div class="form-page" data-multi-step-form-target="formPage">
+        <%= f.label :notice_period, label: 'Step 2' %>
+        <%= f.hidden_field :notice_period %>
+         <!-- Display the header card for the notice-period question -->
+        <div class="button-group  ">
+            <div class="onboaring_margin_negative">
+              <div class="card-header">
+                <%= image_tag "brain.png", class: "avatar-medium" %>
+                <div class="card-header-info">
+                  <h2>Do you have a notice period?</h2>
+                  <p>Based on your current contract, when could you start the new job ?</p>
+                </div>
+              </div>
+             </div>
+        <div class="button-group">
+          <% Criterium::NOTICE_PERIOD.each do |period| %>
+          <div class="d-flex justify-content-center">
+            <div class="btn-rainbow-container">
+              <%= link_to period, "#", class: "btn-rainbow-link", data: { action: "click->multi-step-form#nextPage", answer_value: period, param_name: "notice_period" } %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+        <!-- Third question: Location -->
+        <div class="form-page" data-multi-step-form-target="formPage">
+            <div class="">
+              <div class="card-header">
+                <%= image_tag "brain.png", class: "avatar-medium" %>
+                <div class="card-header-info">
+                  <h2>Do you have a notice period?</h2>
+                  <p>Based on your current contract, when could you start the new job ?</p>
+                </div>
+              </div>
+             </div>
+          <%= f.input :location, label: 'Where would you like to work?' %>
+        </div>
+
+        <!-- Fourth question: Salary grid -->
+        <div class="form-page" data-multi-step-form-target="formPage">
+          <%= f.input :salary_grid, label: 'What is your Salary expectations?', collection: Criterium::SALARY_GRID %>
+        </div>
+
+        <!-- Fifth question: Position -->
+        <div class="form-page" data-multi-step-form-target="formPage">
+          <%= f.input :position_id, label: 'what position are you targeting?', collection: Position.all, label_method: lambda { |position| position.position_name } %>
+        </div>
+      <div class="navigation">
+        <%= link_to "Next", "#", class: "btn-principal", data: { multi_step_form_target: "nextButton", action: "click->multi-step-form#nextPage" } %>
+        <%= link_to "Previous", "#", class: "btn-principal", data: { multi_step_form_target: "prevButton", action: "click->multi-step-form#prevPage" } %>
+        <%= f.submit 'Submit', class: "btn-principal", data: { multi_step_form_target: "submitButton" } %>
+      </div>
+
+    <% end %>
   </div>
-
-    <!-- Third question: Location -->
-    <div class="form-page" data-multi-step-form-target="formPage">
-      <%= f.input :location, label: 'Where would you like to work?' %>
-    </div>
-
-    <!-- Fourth question: Salary grid -->
-    <div class="form-page" data-multi-step-form-target="formPage">
-      <%= f.input :salary_grid, label: 'What is your Salary expectations?', collection: Criterium::SALARY_GRID %>
-    </div>
-
-    <!-- Fifth question: Position -->
-    <div class="form-page" data-multi-step-form-target="formPage">
-      <%= f.input :position_id, label: 'what position are you targeting?', collection: Position.all, label_method: lambda { |position| position.position_name } %>
-    </div>
-  <div class="navigation">
-    <%= link_to "Next", "#", class: "btn-principal", data: { multi_step_form_target: "nextButton", action: "click->multi-step-form#nextPage" } %>
-    <%= link_to "Previous", "#", class: "btn-principal", data: { multi_step_form_target: "prevButton", action: "click->multi-step-form#prevPage" } %>
-    <%= f.submit 'Submit', class: "btn-principal", data: { multi_step_form_target: "submitButton" } %>
-  </div>
-
-<% end %>
-
 
 </div>

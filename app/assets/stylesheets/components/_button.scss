@@ -1,24 +1,12 @@
-// .btn {
-//   display: inline-block;
-//   padding: 6px 12px;
-//   margin-bottom: 0;
-//   font-size: 14px;
-//   font-weight: normal;
-//   line-height: 1.42857143;
-//   text-align: center;
-//   white-space: nowrap;
-//   vertical-align: middle;
-//   cursor: pointer;
-//   border: 1px solid transparent;
-// }
+
 
 // Btn Rainbow violet
 
 .btn-rainbow-container {
-    margin: $spacer/2;
+    margin: $spacer/2.5;
     position: relative;
     display: block;
-    width: auto;
+    //width: auto;
     padding: 2px;
     align-self: auto;
     -webkit-box-flex: 0;
@@ -34,7 +22,7 @@
 }
 
 .btn-rainbow-link {
-  margin: $spacer/2;
+  margin: $spacer/2.5;
   display: flex;
   padding: $spacer/1.5 $spacer ;
   -webkit-box-pack: end;
@@ -44,9 +32,10 @@
   flex-wrap: nowrap;
   border-radius: $spacer*13;
   background-color: $exore_blue;
-  text-align: left;
+  text-align: center;
   color: $exore_white;
   text-decoration: none;
+
 }
 
 
@@ -61,7 +50,7 @@
   display: inline-block;
   background: linear-gradient(45deg, #0042D4 33%, #2369FF 33%, #2369FF 66%, #BBD3FF 66%);
   border-radius: $spacer * 2; // spacer in fonts.scss
-  width: 100%;
+  width: auto;
 
 }
 
@@ -78,7 +67,8 @@
   outline: none;
   text-decoration: none;
   border-image-slice: 1;
-  width: 100%;
+  width: auto;
+  text-align: center;
 
 }
 
