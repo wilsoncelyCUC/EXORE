@@ -1,11 +1,23 @@
 <%= simple_form_for(@social) do |f| %>
-    <%= f.input :twitter_url, label: 'Twitter Profile URL'%>
+
+<div class="container-small">
+    <%= f.input :twitter_url, label: 'Portafolio URL'%>
     <%= f.input :github_url, label: 'Github Profile URL' %>
     <%= f.input :stack_overflow_url , label: 'Stack Overflow Profile URL'%>
-    <%= f.input :dribble_url , label: 'Dribble Profile URL'%>
+    <%#= f.input :dribble_url , label: 'Dribble Profile URL'%>
 
-    <div class="">
-      <%= f.submit 'Next', class:"btn-principal" %>
-      <%#= link_to "Back", edit_user_registration_path  %>
-    </div>
+</div>
+
+<div class="footer_onboarding_section">
+
+  <div class="d-flex justify-content-center">
+      <div class="btn-rainbow-container">
+        <%= f.submit 'End', class:"btn-rainbow-link" %>
+        <%#= link_to "Back", edit_user_registration_path  %>
+      </div>
+  </div>
+
+</div>
+
+
   <% end %>

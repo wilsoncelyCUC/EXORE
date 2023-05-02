@@ -1,5 +1,19 @@
-<h2>Add Social Information</h2>
-<div class="container">
-  <h1 class="text-center my-3"></h1>
-  <%= render "shared/new-social", social: @social%>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('slide3.jpeg') %>);">
+  <div class="container">
+    <h1><strong>LAST PART</strong></h1>
+    <p>Start-Up Marketplace</p>  </div>
 </div>
+   <div class="onboaring_margin_negative">
+      <div class="container-small">
+        <div class="card-header">
+          <%= image_tag "brain.png", class: "avatar-medium" %>
+          <div class="card-header-info">
+            <p>While not everyone may have public profiles, we encourage you to share any relevant projects or code samples you may have. Don't be afraid to highlight your work in other ways, such as through online portfolios or presentations</p>
+          </div>
+        </div>
+
+      </div>
+        <div class="accordion-space ">
+          <%= render "shared/new-social", social: @social%>
+      </div>
+    </div>

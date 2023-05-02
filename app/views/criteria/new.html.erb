@@ -1,52 +1,271 @@
-<h2>Create Criteria</h2>
-<div class="container">
-  <h1 class="text-center my-3"></h1>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('slide1.jpeg') %>);">
+  <div class="container">
+    <h1><strong>Only takes 3 Minutes</strong></h1>
+    <p>Start-Up Marketplace</p>
+  </div>
+</div>
+
 
 <%= simple_form_for(@criterium, data: { controller: "multi-step-form" }) do |f| %>
 
   <!-- First question: Search status -->
   <div class="form-page" data-multi-step-form-target="formPage">
-    <%= f.label :search_status, 'What is your status?' %>
+    <%= f.label :search_status, 'Select' %>
     <%= f.hidden_field :search_status %>
-    <div class="button-group">
-      <% Criterium::SEARCH_STATUS.each do |status| %>
-        <%= link_to status, "#", class: "btn btn-option", data: { action: "click->multi-step-form#nextPage", answer_value: status, param_name: "search_status" } %>
-      <% end %>
-    </div>
+   <!-- Display the header card for the status question -->
+    <div class="button-group  ">
+      <div class="onboaring_margin_negative">
+        <div class="container-small">
+          <div class="card-header">
+            <%= image_tag "brain.png", class: "avatar-medium" %>
+            <div class="card-header-info">
+              <h2>What is your Status ?</h2>
+              <p>Selecting your status will help us to guide you through the process more efficiently. Please choose the option that best describes your current situation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_onboarding_section">
+        <% Criterium::SEARCH_STATUS.each do |status| %>
+        <div class="d-flex justify-content-center">
+          <div class="btn-rainbow-container">
+            <%= link_to status, "#", class: "btn-rainbow-link", data: { action: "click->multi-step-form#nextPage", answer_value: status, param_name: "search_status" } %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      </div>
   </div>
 
   <!-- Second question: Notice period -->
   <div class="form-page" data-multi-step-form-target="formPage">
-    <%= f.label :notice_period, 'Do you have a notice period?' %>
+    <%= f.label :notice_period, label: 'Step 2' %>
     <%= f.hidden_field :notice_period %>
-    <div class="button-group">
-      <% Criterium::NOTICE_PERIOD.each do |period| %>
-        <%= link_to period, "#", class: "btn btn-option", data: { action: "click->multi-step-form#nextPage", answer_value: period, param_name: "notice_period" } %>
-      <% end %>
+     <!-- Display the header card for the notice-period question -->
+    <div class="button-group  ">
+      <div class="onboaring_margin_negative">
+        <div class="container-small">
+          <div class="card-header">
+            <%= image_tag "brain.png", class: "avatar-medium" %>
+            <div class="card-header-info">
+              <h2>Do you have a notice period?</h2>
+              <p>Based on your current contract, when could you start the new job ?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_onboarding_section">
+        <% Criterium::NOTICE_PERIOD.each do |period| %>
+        <div class="d-flex justify-content-center">
+          <div class="btn-rainbow-container">
+            <%= link_to period, "#", class: "btn-rainbow-link", data: { action: "click->multi-step-form#nextPage", answer_value: period, param_name: "notice_period" } %>
+          </div>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 
-    <!-- Third question: Location -->
-    <div class="form-page" data-multi-step-form-target="formPage">
-      <%= f.input :location, label: 'Where would you like to work?' %>
+  <!-- Third question: Location -->
+  <div class="form-page" data-multi-step-form-target="formPage">
+    <div class="onboaring_margin_negative">
+      <div class="container-small">
+        <div class="card-header">
+          <%= image_tag "brain.png", class: "avatar-medium" %>
+          <div class="card-header-info">
+            <h2>Where would you like to work?</h2>
+            <p>It will help us to define the contract location.</p>
+          </div>
+        </div>
+        <br>
+        <div class="accordion-space">
+          <div class="accordion px-3" id="accordionExample">
+            <h2>Q&A</h2>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Remote Friendly
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Another remote working option is to work for a company that is “remote-friendly.” This essentially means your company is open to occasional remote work, but expects you to be in the office the majority of the time.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Hybrid (WFH + In-office)
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  As the pandemic begins to ease in some parts of the world, many people and companies are opting for a hybrid opportunity. Typically, this means an arrangement between employers and workers where they agree on set “in office” days and other “WFH” days.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Fully Remote
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Finally, there’s fully remote work. When you get a 100% remote job, you’re most likely not expected to ever come to the office.
+                  In fact, you may never even meet the people you work with face-to-face. Many remote workers don’t even live in the same country as their employers.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <!-- Fourth question: Salary grid -->
-    <div class="form-page" data-multi-step-form-target="formPage">
-      <%= f.input :salary_grid, label: 'What is your Salary expectations?', collection: Criterium::SALARY_GRID %>
+    <div class="footer_onboarding_section ">
+
+      <br>
+      <div class="container-small">
+        <%= f.input :location, label: false, placeholder: "Type your preferred location" %>
+      </div>
+      <br>
+      <br>
+      <br>
     </div>
 
-    <!-- Fifth question: Position -->
-    <div class="form-page" data-multi-step-form-target="formPage">
-      <%= f.input :position_id, label: 'what position are you targeting?', collection: Position.all, label_method: lambda { |position| position.position_name } %>
-    </div>
-  <div class="navigation">
-    <%= link_to "Next", "#", class: "btn-principal", data: { multi_step_form_target: "nextButton", action: "click->multi-step-form#nextPage" } %>
-    <%= link_to "Previous", "#", class: "btn-principal", data: { multi_step_form_target: "prevButton", action: "click->multi-step-form#prevPage" } %>
-    <%= f.submit 'Submit', class: "btn-principal", data: { multi_step_form_target: "submitButton" } %>
   </div>
+
+  <!-- Fourth question: Salary grid -->
+  <div class="form-page" data-multi-step-form-target="formPage">
+    <div class="onboaring_margin_negative">
+      <div class="container-small">
+        <div class="card-header">
+          <%= image_tag "brain.png", class: "avatar-medium" %>
+          <div class="card-header-info">
+            <h2>What is your Salary Expectation?</h2>
+            <p>Choose below your yearly salary exceptions.
+            <br>
+            If you are not sure about the grill, please selected Open.
+            No worries if that's not your local currency – just pick the range that matches what you'd like to earn in your country's equivalent.</p>
+          </div>
+        </div>
+        <br>
+
+        <div class="accordion-space">
+          <div class="accordion px-3" id="accordionExample">
+            <h2>Q&A</h2>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Why are the salary options in Euros?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  We're using Euros as a standard currency to simplify the process for everyone. You can still pick a range that matches your desired earnings in your local currency's equivalent.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Will my salary expectation be shared with companies?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Yep, we do share your salary expectations with companies. But don't worry, it helps them understand your worth and find opportunities that match your financial goals. It's all about creating a perfect fit!.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  What if I'm unsure about my salary expectation?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  No problem! Just select the "open" option, and we'll help you figure out your market value. Our goal is to make sure you find the right opportunity that aligns with your skills and experience.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Is it wise to aim high with my salary expectation?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  It's good to know your worth, but remember, companies can accurately benchmark your market value. So, be wise with your expectations! That way, you won't miss out on great opportunities. And keep in mind, salary negotiations are always on the table once you're in the process with fantastic companies.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer_onboarding_section ">
+        <br>
+        <br>
+        <br>
+        <div class="container-small">
+            <%= f.input :salary_grid, label: false, collection:   Criterium::SALARY_GRID %>
+        </div>
+        <br>
+        <br>
+        <br>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Fifth question: Position -->
+  <div class="form-page" data-multi-step-form-target="formPage">
+    <div class="onboaring_margin_negative">
+      <div class="container-small">
+        <div class="card-header">
+          <%= image_tag "brain.png", class: "avatar-medium" %>
+          <div class="card-header-info">
+            <h2>What is your targeted job ?</h2>
+            <p> </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_onboarding_section ">
+        <br>
+        <br>
+        <br>
+        <div class="container-small">
+          <%= f.input :position_id, label: false, collection: Position.all, label_method: lambda { |position| position.position_name } %>
+        </div>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+
+<div class="footer_onboarding_section">
+
+  <div class="navigation container-nav-buttons ">
+    <%= link_to "Previous", "#", class: "btn-rainbow-link", data: { multi_step_form_target: "prevButton", action: "click->multi-step-form#prevPage" } %>
+    <%= link_to "Next", "#", class: "btn-rainbow-violet-link", data: { multi_step_form_target: "nextButton", action: "click->multi-step-form#nextPage" } %>
+
+    <div class="btn-rainbow-container">
+      <%= f.submit 'Submit', class: "btn-rainbow-link", data: { multi_step_form_target: "submitButton" } %>
+    </div>
+  </div>
+</div>
+
 
 <% end %>
-
-
-</div>
