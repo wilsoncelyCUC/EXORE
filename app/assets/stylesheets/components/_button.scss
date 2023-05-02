@@ -18,7 +18,6 @@
     font-weight: 400;
     background-clip: border-box;
     -webkit-text-fill-color: inherit;
-
 }
 
 .btn-rainbow-link {
@@ -35,9 +34,23 @@
   text-align: center;
   color: $exore_white;
   text-decoration: none;
-
 }
 
+.btn-rainbow-violet-link {
+  margin: $spacer/2.5;
+  display: flex;
+  padding: $spacer/1.5 $spacer ;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  border-radius: $spacer*13;
+  background-color: $exore_violet;
+  text-align: center;
+  color: $exore_white;
+  text-decoration: none;
+}
 
 
 .btn-rainbow-link:hover {
@@ -71,6 +84,8 @@
   text-align: center;
 
 }
+
+
 
 .btn-rainbow-blue-link:hover {
   background-color: $exore_white ;

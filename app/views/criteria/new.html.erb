@@ -6,15 +6,6 @@
   </div>
 </div>
 
-<div class="container-small">
-
-
-
-
-  </div>
-
-</div>
-
 
 
 
@@ -37,14 +28,13 @@
                   <p>Selecting your status will help us to guide you through the process more efficiently. Please choose the option that best describes your current situation.</p>
                 </div>
               </div>
-             </div>
+            </div>
           <% Criterium::SEARCH_STATUS.each do |status| %>
           <div class="d-flex justify-content-center">
             <div class="btn-rainbow-container">
-              <%= link_to status, "#", class: "btn-rainbow-link ", data: { action: "click->multi-step-form#nextPage", answer_value: status, param_name: "search_status" } %>
+              <%= link_to status, "#", class: "btn-rainbow-link", data: { action: "click->multi-step-form#nextPage", answer_value: status, param_name: "search_status" } %>
             </div>
           </div>
-
           <% end %>
         </div>
       </div>
@@ -63,8 +53,7 @@
                   <p>Based on your current contract, when could you start the new job ?</p>
                 </div>
               </div>
-             </div>
-        <div class="button-group">
+            </div>
           <% Criterium::NOTICE_PERIOD.each do |period| %>
           <div class="d-flex justify-content-center">
             <div class="btn-rainbow-container">
@@ -75,33 +64,58 @@
         </div>
       </div>
 
-        <!-- Third question: Location -->
-        <div class="form-page" data-multi-step-form-target="formPage">
-            <div class="">
-              <div class="card-header">
-                <%= image_tag "brain.png", class: "avatar-medium" %>
-                <div class="card-header-info">
-                  <h2>Do you have a notice period?</h2>
-                  <p>Based on your current contract, when could you start the new job ?</p>
-                </div>
-              </div>
-             </div>
-          <%= f.input :location, label: 'Where would you like to work?' %>
+      <!-- Third question: Location -->
+      <div class="form-page" data-multi-step-form-target="formPage">
+        <div class="onboaring_margin_negative">
+          <div class="card-header">
+            <%= image_tag "brain.png", class: "avatar-medium" %>
+            <div class="card-header-info">
+              <h2>Where would you like to work?</h2>
+              <p>It will help us to define the contract location.</p>
+            </div>
+          </div>
+
+        <%= f.input :location, label: false, placeholder: "Type your preferred location" %>
         </div>
 
-        <!-- Fourth question: Salary grid -->
-        <div class="form-page" data-multi-step-form-target="formPage">
-          <%= f.input :salary_grid, label: 'What is your Salary expectations?', collection: Criterium::SALARY_GRID %>
+      </div>
+
+      <!-- Fourth question: Salary grid -->
+      <div class="form-page" data-multi-step-form-target="formPage">
+        <div class="onboaring_margin_negative">
+          <div class="card-header">
+            <%= image_tag "brain.png", class: "avatar-medium" %>
+            <div class="card-header-info">
+              <h2>What is your Salary Expectation?</h2>
+              <p>Choose below your yearly salary exceptions.  If you are not sure about the grill, please selected Open.
+
+              No worries if that's not your local currency – just pick the range that matches what you'd like to earn in your country's equivalent.</p>
+            </div>
+          </div>
         </div>
+
+
+          <%= f.input :salary_grid, label: false, collection: Criterium::SALARY_GRID %>
+      </div>
 
         <!-- Fifth question: Position -->
         <div class="form-page" data-multi-step-form-target="formPage">
-          <%= f.input :position_id, label: 'what position are you targeting?', collection: Position.all, label_method: lambda { |position| position.position_name } %>
+        <div class="onboaring_margin_negative">
+          <div class="card-header">
+            <%= image_tag "brain.png", class: "avatar-medium" %>
+            <div class="card-header-info">
+              <h2>What is your targeted job ?</h2>
+              <p> </p>
+            </div>
+          </div>
+
+          <%= f.input :position_id, label: false, collection: Position.all, label_method: lambda { |position| position.position_name } %>
         </div>
-      <div class="navigation">
-        <%= link_to "Next", "#", class: "btn-principal", data: { multi_step_form_target: "nextButton", action: "click->multi-step-form#nextPage" } %>
-        <%= link_to "Previous", "#", class: "btn-principal", data: { multi_step_form_target: "prevButton", action: "click->multi-step-form#prevPage" } %>
-        <%= f.submit 'Submit', class: "btn-principal", data: { multi_step_form_target: "submitButton" } %>
+        </div>
+      <div class="navigation container-nav-buttons">
+        <%= link_to "Previous", "#", class: "btn-rainbow-link", data: { multi_step_form_target: "prevButton", action: "click->multi-step-form#prevPage" } %>
+        <%= link_to "Next", "#", class: "btn-rainbow-violet-link", data: { multi_step_form_target: "nextButton", action: "click->multi-step-form#nextPage" } %>
+        <%= f.submit 'Submit', class: "btn-rainbow-link", data: { multi_step_form_target: "submitButton" } %>
       </div>
 
     <% end %>
