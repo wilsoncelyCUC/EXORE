@@ -3,7 +3,7 @@
 // Btn Rainbow violet
 
 .btn-rainbow-container {
-    margin: $spacer/2.5;
+    margin: $spacer/4;
     position: relative;
     display: block;
     //width: auto;
@@ -21,7 +21,7 @@
 }
 
 .btn-rainbow-link {
-  margin: $spacer/2.5;
+  margin: $spacer/4;
   display: flex;
   padding: $spacer/1.5 $spacer ;
   -webkit-box-pack: end;
