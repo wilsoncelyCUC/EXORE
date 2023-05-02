@@ -78,12 +78,55 @@
             <p>It will help us to define the contract location.</p>
           </div>
         </div>
+        <br>
+        <div class="accordion-space">
+          <div class="accordion px-3" id="accordionExample">
+            <h2>Q&A</h2>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Remote Friendly
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Another remote working option is to work for a company that is “remote-friendly.” This essentially means your company is open to occasional remote work, but expects you to be in the office the majority of the time.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Hybrid (WFH + In-office)
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  As the pandemic begins to ease in some parts of the world, many people and companies are opting for a hybrid opportunity. Typically, this means an arrangement between employers and workers where they agree on set “in office” days and other “WFH” days.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Fully Remote
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Finally, there’s fully remote work. When you get a 100% remote job, you’re most likely not expected to ever come to the office.
+                  In fact, you may never even meet the people you work with face-to-face. Many remote workers don’t even live in the same country as their employers.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
     <div class="footer_onboarding_section ">
-      <br>
-      <br>
+
       <br>
       <div class="container-small">
         <%= f.input :location, label: false, placeholder: "Type your preferred location" %>
@@ -103,23 +146,84 @@
           <%= image_tag "brain.png", class: "avatar-medium" %>
           <div class="card-header-info">
             <h2>What is your Salary Expectation?</h2>
-            <p>Choose below your yearly salary exceptions.  If you are not sure about the grill, please selected Open.
+            <p>Choose below your yearly salary exceptions.
+            <br>
+            If you are not sure about the grill, please selected Open.
             No worries if that's not your local currency – just pick the range that matches what you'd like to earn in your country's equivalent.</p>
           </div>
         </div>
+        <br>
+
+        <div class="accordion-space">
+          <div class="accordion px-3" id="accordionExample">
+            <h2>Q&A</h2>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Why are the salary options in Euros?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  We're using Euros as a standard currency to simplify the process for everyone. You can still pick a range that matches your desired earnings in your local currency's equivalent.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Will my salary expectation be shared with companies?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Yep, we do share your salary expectations with companies. But don't worry, it helps them understand your worth and find opportunities that match your financial goals. It's all about creating a perfect fit!.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  What if I'm unsure about my salary expectation?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  No problem! Just select the "open" option, and we'll help you figure out your market value. Our goal is to make sure you find the right opportunity that aligns with your skills and experience.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Is it wise to aim high with my salary expectation?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  It's good to know your worth, but remember, companies can accurately benchmark your market value. So, be wise with your expectations! That way, you won't miss out on great opportunities. And keep in mind, salary negotiations are always on the table once you're in the process with fantastic companies.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
 
-    <div class="footer_onboarding_section ">
-      <br>
-      <br>
-      <br>
-      <div class="container-small">
-        <%= f.input :salary_grid, label: false, collection: Criterium::SALARY_GRID %>
+      <div class="footer_onboarding_section ">
+        <br>
+        <br>
+        <br>
+        <div class="container-small">
+            <%= f.input :salary_grid, label: false, collection:   Criterium::SALARY_GRID %>
+        </div>
+        <br>
+        <br>
+        <br>
       </div>
-      <br>
-      <br>
-      <br>
-    </div>
 
     </div>
   </div>
@@ -160,7 +264,6 @@
     <div class="btn-rainbow-container">
       <%= f.submit 'Submit', class: "btn-rainbow-link", data: { multi_step_form_target: "submitButton" } %>
     </div>
-
   </div>
 </div>
 
