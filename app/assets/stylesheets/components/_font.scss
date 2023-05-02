@@ -1,0 +1,22 @@
+$spacer: 8px;
+$headers-font: "montserrat", "roboto";
+
+h1 {
+  font-size: $spacer * 5;
+  font-family: $headers-font;
+  font-weight: 600 ; //Semibold
+}
+
+h2 {
+  font-size: $spacer * 3;
+  font-family: $headers-font;
+  font-weight: 500 ; //Semibold
+}
+
+h3, h4, h5 , p {
+  font-family: $headers-font;
+
+}
+
+// Reminder of Montserrat
+// Montserrat:ital,wght@0,100;0,300;0,500;0,600;1,400&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Space+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">

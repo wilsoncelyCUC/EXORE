@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   #get 'pages/debug', to: 'pages#debug'
 
+  get "components", to: "pages#components"
 
 
   # routes to find objects related to a user

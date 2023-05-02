@@ -1,13 +1,88 @@
-.btn {
+// .btn {
+//   display: inline-block;
+//   padding: 6px 12px;
+//   margin-bottom: 0;
+//   font-size: 14px;
+//   font-weight: normal;
+//   line-height: 1.42857143;
+//   text-align: center;
+//   white-space: nowrap;
+//   vertical-align: middle;
+//   cursor: pointer;
+//   border: 1px solid transparent;
+// }
+
+// Btn Rainbow violet
+
+.btn-rainbow-container {
+    margin: $spacer/2;
+    position: relative;
+    display: block;
+    width: auto;
+    padding: 2px;
+    align-self: auto;
+    -webkit-box-flex: 0;
+    flex: 0 auto;
+    border-radius: $spacer*13;
+    background-image: linear-gradient(264deg, $exore_violet, $exore_ghost_white 25%, $exore_ghost_white  49%, #fcded9 54%, $exore_blue 87%, $exore_air_force_Blue);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    background-clip: border-box;
+    -webkit-text-fill-color: inherit;
+
+}
+
+.btn-rainbow-link {
+  margin: $spacer/2;
+  display: flex;
+  padding: $spacer/1.5 $spacer ;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  border-radius: $spacer*13;
+  background-color: $exore_blue;
+  text-align: left;
+  color: $exore_white;
+  text-decoration: none;
+}
+
+
+
+.btn-rainbow-link:hover {
+  background-color: $exore_black;
+  color: $exore_ghost_white ;
+}
+
+// Btn Rainbow Blue
+.btn-rainbow-blue-container {
   display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
+  background: linear-gradient(45deg, #0042D4 33%, #2369FF 33%, #2369FF 66%, #BBD3FF 66%);
+  border-radius: $spacer * 2; // spacer in fonts.scss
+  width: 100%;
+
+}
+
+
+.btn-rainbow-blue-link {
+  border-radius: $spacer * 2;
+  margin:  $spacer/2.5 ;
+  display: inline-block;
+  background-color: $exore_blue;
+  color: $exore_white;
+  font-size: $spacer +  $spacer /2;
+  padding: 12px 24px;
   cursor: pointer;
-  border: 1px solid transparent;
+  outline: none;
+  text-decoration: none;
+  border-image-slice: 1;
+  width: 100%;
+
+}
+
+.btn-rainbow-blue-link:hover {
+  background-color: $exore_white ;
+  color: $exore_blue ;
 }

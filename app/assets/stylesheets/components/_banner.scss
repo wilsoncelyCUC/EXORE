@@ -1,0 +1,61 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: $spacer*5 0 $spacer*20;
+  height: 50%;
+
+}
+
+.banner h1 {
+  margin-bottom: $spacer;
+  color: $exore_white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: $spacer*3;
+  color: $exore_white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
+@media (max-width: 900px) {
+  .banner h1 {
+    font-size: $spacer * 5;
+  }
+  .banner p {
+    font-size: $spacer * 3;
+  }
+}
+
+@media (max-width: 700px) {
+  .banner h1 {
+    font-size: $spacer * 3;
+  }
+  .banner p {
+    font-size: $spacer * 2;
+  }
+}
+
+@media (max-width: 450px) {
+  .banner h1 {
+    font-size: $spacer * 3;
+    text-align: center;
+  }
+  .banner p {
+    font-size: $spacer * 2;
+    //text-align: center;
+
+  }
+}
+
+
+// BOOTSTRAP carousel Exore
+.carouselExoreimage {
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+}
