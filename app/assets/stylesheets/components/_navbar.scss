@@ -1,12 +1,36 @@
-.navbar-lewagon {
+.navbar-exore {
   justify-content: space-between;
-  background: white;
+  background: $exore_blue;
+
+  a {
+    color: $exore_white;
+  }
+  a:hover {
+    color: $exore_air_force_Blue;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
+
+
+.navbar-exore .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-exore .navbar-brand img {
   width: 40px;
+}
+
+.dropdown-menu {
+  a {
+    color: $exore_black;
+  }
+
+
+}
+
+// specific
+
+#exore-title {
+  margin:$spacer/2;
+
 }
