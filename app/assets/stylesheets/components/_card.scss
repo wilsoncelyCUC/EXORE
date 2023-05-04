@@ -5,6 +5,53 @@
 }
 
 
+
+// card criterium
+
+.card-criterium {
+  padding: $spacer/2 $spacer/2;
+  display: flex;
+  border-radius: $spacer*2 ;
+  margin: $spacer ;
+  border: 3px solid $exore_silver;
+  justify-content: space-around;
+  vertical-align: middle;
+  text-align: center;
+  background-color: $exore_white;
+
+}
+
+.card-criterium-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  vertical-align: middle;
+
+  i, p {
+    margin-left: $spacer;
+  }
+
+  p {
+    margin-bottom: 0px;
+    text-align: center;
+    vertical-align: middle;
+
+  }
+}
+
+.card-criterium-details {
+  flex-grow: 1;
+  padding-left: $spacer;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: $spacer;
+
+
+
+}
+
+
 // card header with the brain image.
 .card-header {
   width: 100%;

@@ -1,0 +1,25 @@
+.label-skill {
+  padding: $spacer/2 $spacer*2;
+  border-radius: $spacer*2 ;
+  background-color: $exore_violet;
+  color: $exore_white;
+  text-decoration: none;
+}
+
+.info {
+  margin: $spacer/4 $spacer/2;
+  padding: $spacer $spacer*2;
+  border-radius: $spacer*2 ;
+  background-color: $exore_ghost_white;
+  line-height: 0.6;
+  width: 100%;
+  p {
+    color: $exore_violet;
+  }
+}
+
+.label-info {
+  text-decoration: none;
+  color: $exore_blue;
+  font-weight: 600;
+}

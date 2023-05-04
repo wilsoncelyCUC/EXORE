@@ -20,6 +20,8 @@ class CriteriaController < ApplicationController
   end
 
   def show
+    @user = User.find(@criterium.user.id)
+    @position = Position.find(@criterium.position_id)
   end
 
   def edit
@@ -43,7 +45,7 @@ class CriteriaController < ApplicationController
   private
 
   def find_criterium
-    @criterium = criterium.find(params[:id])
+    @criterium = Criterium.find(params[:id])
   end
 
   def find_account_current_user

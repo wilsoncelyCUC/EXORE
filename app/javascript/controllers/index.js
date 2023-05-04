@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import MultiStepFormController from "./multi_step_form_controller"
 application.register("multi-step-form", MultiStepFormController)
+
+import TabsController from "./tabs_controller"
+application.register("tabs", TabsController)

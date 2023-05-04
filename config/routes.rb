@@ -13,12 +13,12 @@ Rails.application.routes.draw do
   resources :users do
     resources :accounts, only: [:index, :edit, :update]
     resources :socials, only: [:index ]
-    resources :criteria, only:[:index, :edit, :update ]
+    resources :criteria, only:[:index, :edit, :update, :show ]
   end
 
   #routes unique for the onboarding forms of a new candidate
   resources :accounts, only: [:new, :create]
-  resources :criteria, only: [:new, :create, :edit, :update]
+  resources :criteria, only: [:new, :create, :edit, :update, :show]
   resources :socials, only: [:new, :create]
 
 

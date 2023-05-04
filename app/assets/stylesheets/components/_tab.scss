@@ -1,0 +1,48 @@
+/* Style the list containing the tabs */
+ul.tabs {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: none;
+  border-radius: 5px;
+}
+
+/* Style each tab item */
+ul.tabs li {
+  float: left;
+}
+
+/* Style the tab links */
+ul.tabs li a {
+  display: block;
+  color: $exore_black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+/* Change the background color of the links when hovered */
+ul.tabs li a:hover {
+  background-color: $exore_black;
+  color: $exore_white;
+  border-radius: 60%;
+
+}
+
+/* Style the active tab */
+ul.tabs li a.tab-active {
+  background-color: $exore_violet;
+  border-radius: 60%;
+}
+
+/* Style the tab content */
+.tab-content {
+  display: none;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+}

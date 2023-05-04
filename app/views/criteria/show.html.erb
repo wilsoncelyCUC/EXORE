@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="show-crteria">
+    <div class="show-crteria-left">
+
+      <div data-controller="tabs">
+        <ul class="tabs">
+          <li>
+            <a href="#" data-tabs-target="tab" data-action="click->tabs#changeTab" class="tab-active">My Criteria</a>
+          </li>
+          <li>
+            <a href="#" data-tabs-target="tab" data-action="click->tabs#changeTab"></a>
+          </li>
+          <li>
+            <a href="#" data-tabs-target="tab" data-action="click->tabs#changeTab">Tab 3</a>
+          </li>
+        </ul>
+
+        <div data-tabs-target="content" class="tab-content">
+
+          <div class="criteria">
+
+            <div class="card-criterium">
+              <div class="card-criterium-info">
+                <i class="fa-solid fa-location-pin"></i><br>
+                <p>Status</p>
+              </div>
+
+              <div class="card-criterium-details">
+                <%= link_to @criterium.search_status, "#", class: "label-skill"    %>
+              </div>
+            </div>
+
+
+            <div class="card-criterium">
+              <div class="card-criterium-info">
+                <i class="fa-solid fa-location-pin"></i><br>
+                <p>Location</p>
+              </div>
+
+              <div class="card-criterium-details">
+                <%= link_to @criterium.location, "#", class: "label-skill"    %>
+              </div>
+            </div>
+
+            <div class="card-criterium">
+              <div class="card-criterium-info">
+                <i class="fa-solid fa-location-pin"></i><br>
+                <p>Salary Expectations</p>
+              </div>
+
+              <div class="card-criterium-details">
+                <%= link_to @criterium.salary_grid, "#", class: "label-skill"    %>
+              </div>
+            </div>
+
+            <div class="card-criterium">
+              <div class="card-criterium-info">
+                <i class="fa-solid fa-location-pin"></i><br>
+                <p>Notice Period</p>
+              </div>
+
+              <div class="card-criterium-details">
+                <%= link_to @criterium.notice_period, "#", class: "label-skill"    %>
+              </div>
+            </div>
+
+            <div class="card-criterium">
+              <div class="card-criterium-info">
+                <i class="fa-solid fa-location-pin"></i><br>
+                <p>Target Position</p>
+              </div>
+
+              <div class="card-criterium-details">
+                <%= link_to @position.position_name, "#", class: "label-skill"    %>
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </div>
+        <div data-tabs-target="content" class="tab-content" hidden>
+          <p>Tab 2 content...</p>
+        </div>
+        <div data-tabs-target="content" class="tab-content" hidden>
+          <p>Tab 3 content...</p>
+        </div>
+      </div>
+
+
+
+    <div class="show-crteria-right">
+
+    </div>
+  </div>
+
+</div>
