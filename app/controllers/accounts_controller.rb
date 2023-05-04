@@ -15,7 +15,8 @@ class AccountsController < ApplicationController
         email: current_user.email,
         user_id: current_user.id,
         birthday: "2000/01/01",
-        phone: "+33 6 00 00 00 00"
+        phone: "+33 6 00 00 00 00",
+        sign_up: false
       )
       if @account.save!
         redirect_to new_criterium_path

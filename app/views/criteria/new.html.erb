@@ -268,11 +268,10 @@
       <br>
       <br>
       <br>
-      <br>
       <div class="footer_onboarding_section3 ">
 
         <div class="container-small">
-          <p>Select your desired position</p>
+          <p><strong>[MANDATORY] </strong>Select your desired position</p>
           <%= f.input :position_id, label: false, collection: Position.all, label_method: lambda { |position| position.position_name } %>
         </div>
 

@@ -22,13 +22,15 @@ class CriteriaController < ApplicationController
   def show
     @user = User.find(@criterium.user.id)
     @position = Position.find(@criterium.position_id)
-    @social = Social.find_by(user_id: @user.id)
+    @social =  Social.find_by(user_id: @user.id).nil? ?  Social.new : Social.find_by(user_id: @user.id)
+
     @account = Account.find_by(user_id: @user.id)
 
-
-    @user_stackoverflow = remove_base_url_StackOF(@social.stack_overflow_url)
-    @user_github = remove_base_url_github(@social.github_url)
-    @user_portfolio = @social.twitter_url.empty? ? "Missing" : "All good"
+    if !@social.nil?
+      @user_stackoverflow =  @social.stack_overflow_url.empty? ? "Missing" : remove_base_url_StackOF(@social.stack_overflow_url)
+      @user_github = @social.github_url.empty? ? "Missing" : remove_base_url_github(@social.github_url)
+      @user_portfolio = @social.twitter_url.empty? ? "Missing" : "All good"
+    end
 
     @capitalized_name = capitalize_name(@account.first_name, @account.last_name)
 

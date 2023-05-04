@@ -1,6 +1,7 @@
 class Criterium < ApplicationRecord
   belongs_to :user
   belongs_to :position
+  validates :position_id, :search_status, presence: true
 
 # Collections
 SEARCH_STATUS = ["Starting Search","Actively searching","I am curiaus"]
