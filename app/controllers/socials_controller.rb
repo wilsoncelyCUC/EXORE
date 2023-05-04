@@ -11,10 +11,11 @@ class SocialsController < ApplicationController
   end
 
   def create
+    find_criterium
     @social = Social.new(social_params)
     @social.user = current_user
     if @social.save!
-      redirect_to root_path
+      redirect_to criterium_path(@criterium)
     else
       render :new
     end
@@ -27,8 +28,13 @@ class SocialsController < ApplicationController
   end
 
   def update
+    find_criterium
+    find_account
     if @social.update(social_params)
-      redirect_to root_path
+      @account.sign_up = true
+      @account.save
+      @social.save
+      redirect_to criterium_path(@criterium)
     else
       render :new
     end
@@ -45,9 +51,20 @@ class SocialsController < ApplicationController
     @social = Social.find(params[:id])
   end
 
+  def find_account
+    @account = Account.find_by(user_id: @social.user.id)
+  end
+
   def social_params
     params.required(:social).permit(:twitter_url, :github_url, :stack_overflow_url, :dribble_url)
   end
 
+  def find_criterium
+    if @social.nil?
+      @criterium = Criterium.find_by(user_id: current_user.id)
+    else
+      @criterium = Criterium.find_by(user_id: @social.user.id)
+    end
+  end
 
 end

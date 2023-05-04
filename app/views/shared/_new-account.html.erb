@@ -8,6 +8,7 @@
                 :end_year => Date.today.year - 12,
                 :order => [:day, :month, :year], label: 'Birthday'%>
     <%= f.input :phone , label: 'Phone (E.G. 3005520741)'%>
+    <%= f.input :email , label: 'Type your email'%>
 
     <div class="d-flex justify-content-center my-0">
       <%= f.submit 'Update', class:"btn-rainbow-link" %>

@@ -21,7 +21,9 @@
         </div>
         <div data-tabs-target="content" class="tab-content" hidden>
           <div class="social">
-            <%= render "show_social", criterium: @criterium, social: @social%>
+            <% if @social %>
+              <%= render "show_social", criterium: @criterium, social: @social%>
+            <% end %>
           </div>
         </div>
         <%# <div data-tabs-target="content" class="tab-content" hidden>

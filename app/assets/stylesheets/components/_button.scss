@@ -36,31 +36,85 @@
   text-decoration: none;
 }
 
-// next and back buttons
+@media (max-width: 900px) {
 
-// .btn-solid-violet-link {
-//   margin: $spacer/4;
-//   display: flex;
-//   padding: $spacer/8 $spacer/4 ;
-//   -webkit-box-pack: end;
-//   -webkit-justify-content: flex-end;
-//   -ms-flex-pack: end;
-//   justify-content: flex-end;
-//   flex-wrap: nowrap;
-//   border-radius: $spacer*13;
-//   background-color: $exore_violet;
-//   text-align: center;
-//   color: $exore_white;
-//   text-decoration: none;
-// }
+}
 
+@media (max-width: 700px) {
+  .btn-rainbow-container {
+    margin: $spacer/8;
+    font-size: $spacer;
+  }
 
-// .btn-solid-link:hover {
-//   background-color: $exore_black;
-//   color: $exore_ghost_white ;
-// }
+  .btn-rainbow-link {
+    margin: $spacer/8;
+    justify-content: center;
+    font-size: $spacer;
+
+  }
+}
+
+@media (max-width: 450px) {
+  .btn-rainbow-container {
+    margin: $spacer/8;
+    font-size: $spacer;
+  }
+
+  .btn-rainbow-link {
+    margin: $spacer/8;
+    justify-content: center;
+    font-size: $spacer;
+
+  }
+}
+
+// navigation buttons "next, back"
+.nav-buttons-onboarding-next {
+  padding: $spacer/2 $spacer*2;
+  border-radius: $spacer*2 ;
+  background-color: $exore_blue;
+  color: $exore_white;
+  text-decoration: none;
+}
+
+.nav-buttons-onboarding-back {
+  padding: $spacer/1.5 $spacer;
+  border-radius: $spacer*2 ;
+  background-color: $exore_violet;
+  color: $exore_white;
+  text-decoration: none;
+}
+
+// answers buttons
+
+.nav-answers-buttons {
+  display:flex ;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+
+}
+
+@media (max-width: 700px) {
+  .nav-answers-buttons {
+    display:flex ;
+    justify-content: none;
+    align-items: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .nav-answers-buttons {
+    display:inline ;
+    justify-content: none;
+    align-items: center;
+  }
+}
+
 
 // Btn Rainbow violet
+
 .btn-rainbow-violet-container {
   display: flex;
   justify-content: center;

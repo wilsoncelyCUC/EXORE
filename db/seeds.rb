@@ -26,19 +26,25 @@ puts "TEST USER #{usertest.email} created (LOGIN with this one)"
 #Create Positions
 position1 = Position.create!(
   position_name: "Back Developer",
-  mk_salary: "50.000 Eur/year"
+  mk_salary: "60.000 Eur/year"
 )
 puts "#{position1.position_name} was created"
 
 position2 = Position.create!(
   position_name: "Front Developer",
-  mk_salary: "45.000 Eur/year"
+  mk_salary: "55.000 Eur/year"
 )
 puts "#{position2.position_name} was created"
 
 position3 = Position.create!(
   position_name: "Full Stack Developer",
-  mk_salary: "60.000 Eur/year"
+  mk_salary: "70.000 Eur/year"
+)
+puts "#{position3.position_name} was created"
+
+position4 = Position.create!(
+  position_name: "Product Manager",
+  mk_salary: "70.000 Eur/year"
 )
 puts "#{position3.position_name} was created"
 
