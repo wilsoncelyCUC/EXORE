@@ -24,11 +24,9 @@ class SocialsController < ApplicationController
   end
 
   def edit
-    find_account_current_user
   end
 
   def update
-    find_account_current_user
     if @social.update(social_params)
       redirect_to root_path
     else

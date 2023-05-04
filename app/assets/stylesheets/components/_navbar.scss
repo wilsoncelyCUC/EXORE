@@ -1,6 +1,9 @@
 .navbar-exore {
   justify-content: space-between;
   background: $exore_blue;
+  position: sticky;
+  top: 0px;
+
 
   a {
     color: $exore_white;

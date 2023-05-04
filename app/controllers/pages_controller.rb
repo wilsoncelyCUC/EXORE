@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home , :debug]
+  skip_before_action :authenticate_user!, only: [ :debug]
 
   def debug
     render json: {

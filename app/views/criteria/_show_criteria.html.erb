@@ -1,0 +1,75 @@
+
+            <div class="card-criterium">
+              <div class="card-criterium-info">
+                <i class="fa-solid fa-temperature-three-quarters"></i>
+                <p>Status</p>
+              </div>
+
+              <div class="card-criterium-details">
+                <%= link_to @criterium.search_status, edit_criterium_path(@criterium), class: "label-skill"    %>
+              </div>
+            </div>
+
+
+            <div class="card-criterium">
+              <div class="card-criterium-info">
+                <i class="fa-solid fa-location-pin"></i><br>
+                <p>Location</p>
+              </div>
+
+              <div class="card-criterium-details">
+                <%= link_to @criterium.location, "#", class: "label-skill"    %>
+              </div>
+            </div>
+
+            <div class="card-criterium">
+              <div class="card-criterium-info">
+                <i class="fa-solid fa-flag-checkered"></i>
+                <p>Remote Work</p>
+              </div>
+
+              <div class="card-criterium-details">
+                <%= link_to @criterium.remote_work_type, edit_criterium_path(@criterium), class: "label-skill"    %>
+              </div>
+            </div>
+
+            <div class="card-criterium">
+              <div class="card-criterium-info">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <p>Salary Expectations</p>
+              </div>
+
+              <div class="card-criterium-details">
+                <%= link_to @criterium.salary_grid, edit_criterium_path(@criterium), class: "label-skill"    %>
+              </div>
+            </div>
+
+
+            <div class="card-criterium">
+              <div class="card-criterium-info">
+                <i class="fa-solid fa-flag-checkered"></i>
+                <p>Notice Period</p>
+              </div>
+
+              <div class="card-criterium-details">
+                <%= link_to @criterium.notice_period, edit_criterium_path(@criterium), class: "label-skill"    %>
+              </div>
+            </div>
+
+            <div class="card-criterium">
+              <div class="card-criterium-info">
+                <i class="fa-solid fa-crosshairs"></i>
+                <p>Target Position</p>
+              </div>
+
+              <div class="card-criterium-details">
+                <%= link_to @position.position_name, edit_criterium_path(@criterium), class: "label-skill"    %>
+              </div>
+            </div>
+
+
+            <div class="d-flex justify-content-center my-0">
+              <div class="my-0">
+                  <%= link_to "Edit", edit_criterium_path(@criterium), class: "btn-rainbow-link" %>
+               </div>
+            </div>

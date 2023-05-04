@@ -65,6 +65,9 @@
         <% end %>
       </div>
     </div>
+        <br>
+        <br>
+        <br>
   </div>
 
   <!-- Third question: Location -->
@@ -74,8 +77,8 @@
         <div class="card-header">
           <%= image_tag "brain.png", class: "avatar-medium" %>
           <div class="card-header-info">
-            <h2>Where would you like to work?</h2>
-            <p>It will help us to define the contract location.</p>
+            <h2>Where are you based?</h2>
+            <p>It will help us understand where you are legally allowed to work.</p>
           </div>
         </div>
         <br>
@@ -130,6 +133,8 @@
       <br>
       <div class="container-small">
         <%= f.input :location, label: false, placeholder: "Type your preferred location" %>
+        <%= f.input :remote_work_type, label: false, collection:   Criterium::REMOTE_WORK_TYPE %>
+
       </div>
       <br>
       <br>
@@ -210,7 +215,9 @@
 
           </div>
         </div>
-
+        <br>
+        <br>
+        <br>
       </div>
 
       <div class="footer_onboarding_section ">
@@ -259,10 +266,10 @@
 
   <div class="navigation container-nav-buttons ">
     <%= link_to "Previous", "#", class: "btn-rainbow-link", data: { multi_step_form_target: "prevButton", action: "click->multi-step-form#prevPage" } %>
-    <%= link_to "Next", "#", class: "btn-rainbow-violet-link", data: { multi_step_form_target: "nextButton", action: "click->multi-step-form#nextPage" } %>
+    <%= link_to "Next", "#", class: "btn-rainbow-link", data: { multi_step_form_target: "nextButton", action: "click->multi-step-form#nextPage" } %>
 
-    <div class="btn-rainbow-container">
-      <%= f.submit 'Submit', class: "btn-rainbow-link", data: { multi_step_form_target: "submitButton" } %>
+    <div class="">
+      <%= f.submit 'Next', class: "btn-rainbow-link", data: { multi_step_form_target: "submitButton" } %>
     </div>
   </div>
 </div>
