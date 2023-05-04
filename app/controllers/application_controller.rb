@@ -21,7 +21,9 @@ class ApplicationController < ActionController::Base
   end
 
   def find_criterium_app
-    @user_criterium = Criterium.find_by(user_id: current_user.id)
+    if current_user
+      @user_criterium = Criterium.find_by(user_id: current_user.id)
+    end
   end
 
 end

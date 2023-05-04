@@ -22,6 +22,16 @@ class CriteriaController < ApplicationController
   def show
     @user = User.find(@criterium.user.id)
     @position = Position.find(@criterium.position_id)
+    @social = Social.find_by(user_id: @user.id)
+    @account = Account.find_by(user_id: @user.id)
+
+
+    @user_stackoverflow = remove_base_url_StackOF(@social.stack_overflow_url)
+    @user_github = remove_base_url_github(@social.github_url)
+    @user_portfolio = @social.twitter_url.empty? ? "Missing" : "All good"
+
+    @capitalized_name = capitalize_name(@account.first_name, @account.last_name)
+
   end
 
   def edit
@@ -31,7 +41,7 @@ class CriteriaController < ApplicationController
   def update
     find_account_current_user
     if @criterium.update(criterium_params)
-      redirect_to root_path
+      redirect_to criterium_path(@criterium)
     else
       render :new
     end
@@ -53,7 +63,25 @@ class CriteriaController < ApplicationController
   end
 
   def criterium_params
-    params.require(:criterium).permit(:search_status, :notice_period, :location, :salary_grid, :position_id)
+    params.require(:criterium).permit(:search_status, :notice_period, :location, :salary_grid, :position_id, :remote_work_type)
+  end
+
+  def remove_base_url_StackOF(full_url)
+    base_url = "https://stackoverflow.com/users/"
+    user_url = full_url.sub(base_url, "")
+    user_url
+  end
+
+  def remove_base_url_github(full_url)
+    base_url = "https://github.com/"
+    user_url = full_url.sub(base_url, "")
+    user_url
+  end
+
+  def capitalize_name(first_name, last_name)
+    capitalized_first_name = first_name.split.map(&:capitalize).join(' ')
+    first_initial_last_name = last_name.split.first.capitalize.slice(0)
+    "#{capitalized_first_name} #{first_initial_last_name}."
   end
 
 end

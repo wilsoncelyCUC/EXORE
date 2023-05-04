@@ -6,6 +6,7 @@
   text-decoration: none;
 }
 
+// label info
 .info {
   margin: $spacer/4 $spacer/2;
   padding: $spacer $spacer*2;
@@ -22,4 +23,24 @@
   text-decoration: none;
   color: $exore_blue;
   font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .label-skill {
+  }
+}
+
+@media (max-width: 700px) {
+  .label-skill {
+    font-size: $spacer*1.7;
+    padding: 0 $spacer/2;
+  }
+}
+
+@media (max-width: 450px) {
+  .label-skill {
+    font-size: $spacer*1.5;
+    padding: 0 $spacer/2;
+
+  }
 }

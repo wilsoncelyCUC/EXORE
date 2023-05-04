@@ -1,96 +1,90 @@
 <div class="container">
-  <div class="show-crteria">
-    <div class="show-crteria-left">
-
+  <div class="show-criteria">
+    <div class="show-criteria-left">
       <div data-controller="tabs">
         <ul class="tabs">
           <li>
             <a href="#" data-tabs-target="tab" data-action="click->tabs#changeTab" class="tab-active">My Criteria</a>
           </li>
           <li>
-            <a href="#" data-tabs-target="tab" data-action="click->tabs#changeTab"></a>
+            <a href="#" data-tabs-target="tab" data-action="click->tabs#changeTab">Social</a>
           </li>
-          <li>
+          <%# <li>
             <a href="#" data-tabs-target="tab" data-action="click->tabs#changeTab">Tab 3</a>
-          </li>
+          </li> %>
         </ul>
 
         <div data-tabs-target="content" class="tab-content">
-
           <div class="criteria">
-
-            <div class="card-criterium">
-              <div class="card-criterium-info">
-                <i class="fa-solid fa-location-pin"></i><br>
-                <p>Status</p>
-              </div>
-
-              <div class="card-criterium-details">
-                <%= link_to @criterium.search_status, "#", class: "label-skill"    %>
-              </div>
-            </div>
-
-
-            <div class="card-criterium">
-              <div class="card-criterium-info">
-                <i class="fa-solid fa-location-pin"></i><br>
-                <p>Location</p>
-              </div>
-
-              <div class="card-criterium-details">
-                <%= link_to @criterium.location, "#", class: "label-skill"    %>
-              </div>
-            </div>
-
-            <div class="card-criterium">
-              <div class="card-criterium-info">
-                <i class="fa-solid fa-location-pin"></i><br>
-                <p>Salary Expectations</p>
-              </div>
-
-              <div class="card-criterium-details">
-                <%= link_to @criterium.salary_grid, "#", class: "label-skill"    %>
-              </div>
-            </div>
-
-            <div class="card-criterium">
-              <div class="card-criterium-info">
-                <i class="fa-solid fa-location-pin"></i><br>
-                <p>Notice Period</p>
-              </div>
-
-              <div class="card-criterium-details">
-                <%= link_to @criterium.notice_period, "#", class: "label-skill"    %>
-              </div>
-            </div>
-
-            <div class="card-criterium">
-              <div class="card-criterium-info">
-                <i class="fa-solid fa-location-pin"></i><br>
-                <p>Target Position</p>
-              </div>
-
-              <div class="card-criterium-details">
-                <%= link_to @position.position_name, "#", class: "label-skill"    %>
-              </div>
-            </div>
-
+            <%= render "show_criteria", criterium: @criterium, position: @position%>
           </div>
-
-
-
         </div>
         <div data-tabs-target="content" class="tab-content" hidden>
-          <p>Tab 2 content...</p>
+          <div class="social">
+            <%= render "show_social", criterium: @criterium, social: @social%>
+          </div>
         </div>
-        <div data-tabs-target="content" class="tab-content" hidden>
+        <%# <div data-tabs-target="content" class="tab-content" hidden>
           <p>Tab 3 content...</p>
-        </div>
+        </div> %>
       </div>
 
+    </div>
+
+    <div class="show-criteria-main">
+      <br>
+    </div>
+
+    <div class="show-criteria-right">
+
+      <div class="card-account">
+        <div class="card-account-head">
+            <% if image_tag current_user.picture_url %>
+              <%= image_tag current_user.picture_url, class: "avatar-large", alt: "dropdown menu"  %>
+            <% else  %>
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            <% end %>
+
+          <h2><%=@capitalized_name %></h2>
+           <%= link_to @criterium.search_status, edit_criterium_path(@criterium), class: "label-skill"    %>
 
 
-    <div class="show-crteria-right">
+        </div>
+
+        <div class="card-account-row mt-2">
+
+          <div class="info">
+            <p>Birthday</p>
+            <div class="label-info">
+              <%= link_to @account.birthday, edit_account_path(@account), class: "label-info"    %>
+            </div>
+          </div>
+
+          <div class="info">
+            <p>Joined</p>
+            <div class="label-info">
+              <%= link_to time_ago_in_words(@account.created_at), "#", class: "label-info"    %>
+            </div>
+          </div>
+
+        </div>
+        <div class="card-account-row">
+          <div class="info">
+            <p>Whatsapp</p>
+            <div class="label-info">
+              <%= link_to @account.phone, edit_account_path(@account), class: "label-info"    %>
+            </div>
+          </div>
+        </div>
+        <div class="card-account-row">
+          <div class="info">
+            <p>email</p>
+            <div class="label-info">
+              <%= link_to @account.email, edit_account_path(@account), class: "label-info"    %>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

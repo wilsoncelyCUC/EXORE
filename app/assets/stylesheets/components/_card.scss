@@ -46,9 +46,6 @@
   justify-content: end;
   align-items: center;
   gap: $spacer;
-
-
-
 }
 
 
@@ -206,4 +203,23 @@
   .card-lister .card-lister-info p {
     font-size: $spacer * 1.5;
   }
+}
+
+
+// card account
+.card-account {
+  margin-top: $spacer;
+  padding: $spacer/2;
+  background-color: $exore_white;
+  border-radius: $spacer*2 ;
+}
+
+.card-account-head {
+  margin: auto;
+  text-align: center
+}
+
+.card-account-row {
+  display: flex;
+  justify-content: space-around;
 }

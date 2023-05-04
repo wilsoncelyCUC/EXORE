@@ -1,7 +1,48 @@
-.show-crteria {
-  display: flex;
+.main-container {
+  //display: flex;
 }
 
-.show-crteria-left {
-  flex-grow: 1;
+.show-criteria-left {
+ // grid-row: 1;
+  float: left;
+  width: 68%;
+}
+
+.show-criteria-main {
+  // grid-row: 1;
+   float: left;
+   width: 2%;
+ }
+.show-criteria-right {
+  float: left;
+  width: 30%;
+
+}
+
+
+@media (max-width: 900px) {
+  .show-criteria-left, .show-criteria-right {
+    width: 100%;
+  }
+  .show-criteria-main {
+    display: none;
+   }
+}
+
+@media (max-width: 700px) {
+  .show-criteria-left, .show-criteria-right {
+    width: 100%;
+  }
+  .show-criteria-main {
+    display: none;
+   }
+}
+
+@media (max-width: 450px) {
+  .show-criteria-left .show-criteria-right {
+    width: 100%;
+  }
+  .show-criteria-main {
+    display: none;
+   }
 }

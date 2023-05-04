@@ -99,6 +99,15 @@
       <%= link_to "label name", "#", class: "label-skill"    %>
   </div>
 
+ <div class="white-space">
+    <div class="info">
+      <p>This is title</p>
+      <div class="label-info">
+        <%= link_to "label name", "#", class: "label-info"    %>
+      </div>
+    </div>
+  </div>
+
 
 
   <br>
@@ -237,3 +246,119 @@
   </div>
 
 </div>
+
+
+<h2>Show test</h2>
+
+<div class="container">
+
+  <div class="main-container">
+    <div class="show-criteria-left">
+
+      <div data-controller="tabs">
+        <ul class="tabs">
+          <li>
+            <a href="#" data-tabs-target="tab" data-action="click->tabs#changeTab" class="tab-active">My Criteria</a>
+          </li>
+          <li>
+            <a href="#" data-tabs-target="tab" data-action="click->tabs#changeTab">Social</a>
+          </li>
+          <li>
+            <a href="#" data-tabs-target="tab" data-action="click->tabs#changeTab">Tab 3</a>
+          </li>
+        </ul>
+
+        <div data-tabs-target="content" class="tab-content">
+          <div class="criteria">
+            <p>Tab 1 content...</p>
+          </div>
+        </div>
+        <div data-tabs-target="content" class="tab-content" hidden>
+          <div class="social">
+            <p>Tab 2 content...</p>
+
+          </div>
+        </div>
+        <div data-tabs-target="content" class="tab-content" hidden>
+          <p>Tab 3 content...</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="show-criteria-main">
+     <br>
+    </div>
+    <div class="show-criteria-right">
+      <div class="card-account">
+        <div class="card-account-head">
+            <% if image_tag current_user.picture_url %>
+              <%= image_tag current_user.picture_url, class: "avatar-large", alt: "dropdown menu"  %>
+            <% else  %>
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            <% end %>
+
+          <h2>Namewfewfwe C.</h2>
+           <%= link_to "Actively Searching", "#", class: "label-skill"    %>
+
+
+        </div>
+
+        <div class="card-account-row mt-2">
+
+          <div class="info">
+            <p>Birthday</p>
+            <div class="label-info">
+              <%= link_to "10/10/2000", "#", class: "label-info"    %>
+            </div>
+          </div>
+
+          <div class="info">
+            <p>Joined</p>
+            <div class="label-info">
+              <%= link_to "3 months", "#", class: "label-info"    %>
+            </div>
+          </div>
+
+        </div>
+        <div class="card-account-row">
+          <div class="info">
+            <p>Whatsapp</p>
+            <div class="label-info">
+              <%= link_to "+33 6 33264903", "#", class: "label-info"    %>
+            </div>
+          </div>
+        </div>
+        <div class="card-account-row">
+          <div class="info">
+            <p>email</p>
+            <div class="label-info">
+              <%= link_to "wectcorp@gmail.com", "#", class: "label-info"    %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<div class="container">
+  <div class="d">
+    <p>this another segment</p>
+  </div>
+
+</div>
+
+<br>
+<br>
+<br>
+
+<br>
+
+<br>
+<br>
+<br>
+<br>

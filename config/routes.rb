@@ -17,9 +17,9 @@ Rails.application.routes.draw do
   end
 
   #routes unique for the onboarding forms of a new candidate
-  resources :accounts, only: [:new, :create]
+  resources :accounts, only: [:new, :create, :edit, :update]
   resources :criteria, only: [:new, :create, :edit, :update, :show]
-  resources :socials, only: [:new, :create]
+  resources :socials, only: [:new, :create, :edit, :update]
 
 
 
