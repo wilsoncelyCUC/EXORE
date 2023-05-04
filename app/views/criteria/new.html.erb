@@ -11,7 +11,9 @@
 
   <!-- First question: Search status -->
   <div class="form-page" data-multi-step-form-target="formPage">
-    <%= f.label :search_status, 'Select' %>
+    <div class="container-small">
+      <%= f.label :search_status, 'Click =>' %>
+    </div>
     <%= f.hidden_field :search_status %>
    <!-- Display the header card for the status question -->
     <div class="button-group  ">
@@ -20,15 +22,15 @@
           <div class="card-header">
             <%= image_tag "brain.png", class: "avatar-medium" %>
             <div class="card-header-info">
-              <h2>What is your Status ?</h2>
-              <p>Selecting your status will help us to guide you through the process more efficiently. Please choose the option that best describes your current situation.</p>
+              <h2>Share Your Job Search Status! 🚀</h2>
+              <p>We're all about making your job search experience more personalized and enjoyable! Let us know where you're at in your job-hunting journey, and we'll tailor the process to suit your needs. Choose the option that fits your current situation the best!</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="footer_onboarding_section">
+      <div class="nav-answers-buttons">
         <% Criterium::SEARCH_STATUS.each do |status| %>
-        <div class="d-flex justify-content-center">
+        <div class="">
           <div class="btn-rainbow-container">
             <%= link_to status, "#", class: "btn-rainbow-link", data: { action: "click->multi-step-form#nextPage", answer_value: status, param_name: "search_status" } %>
           </div>
@@ -40,7 +42,9 @@
 
   <!-- Second question: Notice period -->
   <div class="form-page" data-multi-step-form-target="formPage">
-    <%= f.label :notice_period, label: 'Step 2' %>
+    <div class="container-small">
+     <%= f.label :notice_period, label: 'Click =>' %>
+    </div>
     <%= f.hidden_field :notice_period %>
      <!-- Display the header card for the notice-period question -->
     <div class="button-group  ">
@@ -49,15 +53,15 @@
           <div class="card-header">
             <%= image_tag "brain.png", class: "avatar-medium" %>
             <div class="card-header-info">
-              <h2>Do you have a notice period?</h2>
-              <p>Based on your current contract, when could you start the new job ?</p>
+              <h2>Notice Period? No Problem! ⏰</h2>
+              <p>To help you find the perfect job opportunity, let us know if you have a notice period to serve. This way, we can present you with job openings that align with your availability. Just tell us when you'd be ready to embark on a new adventure!</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="footer_onboarding_section">
+      <div class=" nav-answers-buttons">
         <% Criterium::NOTICE_PERIOD.each do |period| %>
-        <div class="d-flex justify-content-center">
+        <div class=" ">
           <div class="btn-rainbow-container">
             <%= link_to period, "#", class: "btn-rainbow-link", data: { action: "click->multi-step-form#nextPage", answer_value: period, param_name: "notice_period" } %>
           </div>
@@ -65,9 +69,7 @@
         <% end %>
       </div>
     </div>
-        <br>
-        <br>
-        <br>
+
   </div>
 
   <!-- Third question: Location -->
@@ -77,10 +79,16 @@
         <div class="card-header">
           <%= image_tag "brain.png", class: "avatar-medium" %>
           <div class="card-header-info">
-            <h2>Where are you based?</h2>
-            <p>It will help us understand where you are legally allowed to work.</p>
+            <h2>Location, Location, Location! 🌍</h2>
+            <p>We're here to help you find the best job opportunities, no matter where you're based. Let us know your current location, and we'll make sure to tailor your job search accordingly. Are you open to remote work? We've got that covered too!
+
+            Scroll below for more details..</p>
           </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <div class="accordion-space">
           <div class="accordion px-3" id="accordionExample">
@@ -122,21 +130,25 @@
                 </div>
               </div>
             </div>
+          <br>
+          <br>
+          <br>
           </div>
         </div>
 
+        <br>
+        <br>
+        <br>
       </div>
     </div>
 
-    <div class="footer_onboarding_section ">
-
-      <br>
+    <div class="footer_onboarding_section3 ">
       <div class="container-small">
-        <%= f.input :location, label: false, placeholder: "Type your preferred location" %>
+        <p>Type here location</p>
+        <%= f.input :location, label: false, placeholder: "E.G. Paris" %>
+        <p>Select Remote work type</p>
         <%= f.input :remote_work_type, label: false, collection:   Criterium::REMOTE_WORK_TYPE %>
-
       </div>
-      <br>
       <br>
       <br>
     </div>
@@ -150,13 +162,17 @@
         <div class="card-header">
           <%= image_tag "brain.png", class: "avatar-medium" %>
           <div class="card-header-info">
-            <h2>What is your Salary Expectation?</h2>
-            <p>Choose below your yearly salary exceptions.
-            <br>
-            If you are not sure about the grill, please selected Open.
-            No worries if that's not your local currency – just pick the range that matches what you'd like to earn in your country's equivalent.</p>
+            <h2>Find Jobs That Pay Your Worth! 🌟</h2>
+            <p>Share your yearly salary expectations with us to help find the perfect job that meets your financial goals.
+            </p>
+             <p>Unsure about the numbers? Choose 'Open' and we'll explore together. Keep in mind that it doesn't have to be in your local currency – just pick a range that suits your needs.
+
+            Scroll below to learn more.</p>
           </div>
         </div>
+        <br>
+        <br>
+        <br>
         <br>
 
         <div class="accordion-space">
@@ -212,7 +228,9 @@
                 </div>
               </div>
             </div>
-
+        <br>
+        <br>
+        <br>
           </div>
         </div>
         <br>
@@ -220,14 +238,12 @@
         <br>
       </div>
 
-      <div class="footer_onboarding_section ">
-        <br>
-        <br>
-        <br>
+      <div class="footer_onboarding_section3 ">
+
         <div class="container-small">
+            <p>Select your salary grid</p>
             <%= f.input :salary_grid, label: false, collection:   Criterium::SALARY_GRID %>
         </div>
-        <br>
         <br>
         <br>
       </div>
@@ -242,34 +258,36 @@
         <div class="card-header">
           <%= image_tag "brain.png", class: "avatar-medium" %>
           <div class="card-header-info">
-            <h2>What is your targeted job ?</h2>
-            <p> </p>
+            <h2>What Is Your Target Job?🎯</h2>
+            <p>Tell us the job you have in mind, and we'll find fantastic opportunities that fit your career objectives. Being specific helps us refine our search to bring you closer to the perfect position. Let's embark on this exciting journey together!</p>
           </div>
         </div>
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="footer_onboarding_section3 ">
 
-      <div class="footer_onboarding_section ">
-        <br>
-        <br>
-        <br>
         <div class="container-small">
+          <p>Select your desired position</p>
           <%= f.input :position_id, label: false, collection: Position.all, label_method: lambda { |position| position.position_name } %>
         </div>
-        <br>
-        <br>
-        <br>
+
       </div>
     </div>
   </div>
 
-<div class="footer_onboarding_section">
+<div class="footer_onboarding_section3">
 
   <div class="navigation container-nav-buttons ">
-    <%= link_to "Previous", "#", class: "btn-rainbow-link", data: { multi_step_form_target: "prevButton", action: "click->multi-step-form#prevPage" } %>
-    <%= link_to "Next", "#", class: "btn-rainbow-link", data: { multi_step_form_target: "nextButton", action: "click->multi-step-form#nextPage" } %>
+    <%= link_to "Previous", "#", class: "nav-buttons-onboarding-back", data: { multi_step_form_target: "prevButton", action: "click->multi-step-form#prevPage" } %>
+    <%= link_to "Next", "#", class: "nav-buttons-onboarding-next", data: { multi_step_form_target: "nextButton", action: "click->multi-step-form#nextPage" } %>
 
     <div class="">
-      <%= f.submit 'Next', class: "btn-rainbow-link", data: { multi_step_form_target: "submitButton" } %>
+      <%= f.submit 'Next', class: "nav-buttons-onboarding-next", data: { multi_step_form_target: "submitButton" } %>
     </div>
   </div>
 </div>

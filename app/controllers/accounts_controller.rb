@@ -13,7 +13,10 @@ class AccountsController < ApplicationController
         first_name: current_user.first_name,
         last_name: current_user.last_name,
         email: current_user.email,
-        user_id: current_user.id)
+        user_id: current_user.id,
+        birthday: "2000/01/01",
+        phone: "+33 6 00 00 00 00"
+      )
       if @account.save!
         redirect_to new_criterium_path
       end

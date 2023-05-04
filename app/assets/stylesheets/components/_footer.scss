@@ -7,6 +7,26 @@
   //height: 11vh;
 }
 
+.footer_onboarding_section2 {
+  background-color: $exore_blue;
+  padding: $spacer/2;
+  position: sticky;
+  bottom: 0px;
+  margin: 0;
+  width: 70%;
+  border-radius: $spacer*2;
+  //height: 11vh;
+}
+
+.footer_onboarding_section3 {
+  background-color: $exore_ghost_white;
+  padding: $spacer/2;
+  position: sticky;
+  bottom: 0px;
+  margin: 0;
+  //height: 11vh;
+}
+
 .footer_onboarding_buttons{
   display: flex;
   flex-direction: row;
