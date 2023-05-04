@@ -41,8 +41,9 @@ class AccountsController < ApplicationController
   end
 
   def update
+    find_criterium
     if @account.update(account_params)
-       redirect_to root_path
+      redirect_to criterium_path(@criterium)
     else
       render :new
     end
@@ -60,8 +61,15 @@ class AccountsController < ApplicationController
   end
 
   def account_params
-    params.require(:account).permit(:first_name, :last_name, :birthday, :phone)
+    params.require(:account).permit(:first_name, :last_name, :birthday, :phone, :email)
   end
 
+  def find_criterium
+    if @account.nil?
+      @criterium = Criterium.find_by(user_id: current_user.id)
+    else
+      @criterium = Criterium.find_by(user_id: @account.user.id)
+    end
+  end
 
 end

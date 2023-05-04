@@ -28,12 +28,13 @@ class SocialsController < ApplicationController
   end
 
   def update
+    find_criterium
     find_account
     if @social.update(social_params)
       @account.sign_up = true
       @account.save
       @social.save
-      redirect_to root_path
+      redirect_to criterium_path(@criterium)
     else
       render :new
     end

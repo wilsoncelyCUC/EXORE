@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  before_action :find_criterium_app
+  before_action :find_user_app
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
@@ -20,9 +20,11 @@ class ApplicationController < ActionController::Base
 
   end
 
-  def find_criterium_app
+  def find_user_app
     if current_user
       @user_criterium = Criterium.find_by(user_id: current_user.id)
+      @user_account = Account.find_by(user_id: current_user.id)
+      @user_social = Social.find_by(user_id: current_user.id)
     end
   end
 
