@@ -15,7 +15,9 @@ class ApplicationController < ActionController::Base
       if Account.find_by(user_id: current_user.id).nil?
           new_account_path
       else
-        criterium_path(@user_criterium)
+        # Redirect user to show afer sign-in with linkedin
+        criterium = Criterium.find_by(user_id: current_user.id)
+        criterium_path(criterium)
       end
 
   end
