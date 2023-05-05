@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
       if Account.find_by(user_id: current_user.id).nil?
           new_account_path
       else
-        root_path
+        criterium_path(@user_criterium)
       end
 
   end
